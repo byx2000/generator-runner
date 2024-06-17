@@ -1,0 +1,14 @@
+{
+  "name": "generator-runner",
+  "version": "1.0.0",
+  "description": "Using generator to convert recursive functions to non recursive functions.",
+  "main": "./src/run.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "byx",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^10.4.0"
+  }
+}
