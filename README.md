@@ -6,7 +6,7 @@
 
 1. 将递归函数声明为`function*`
 2. 使用`yield`表达式替换所有递归调用的地方
-3. 使用`runGenerator`运行递归函数
+3. 使用`runGenerator`函数运行递归函数
 
 ## 示例1：求和
 
@@ -71,14 +71,14 @@ for (let i = 1; i <= 10; i++) {
 /**
  * 二叉树前序遍历
  */
-function* inorderTraverse(node) {
+function* preorderTraverse(node) {
   if (!node) {
     return
   }
 
   console.log(node.val)
-  yield inorderTraverse(node.left)
-  yield inorderTraverse(node.right)
+  yield preorderTraverse(node.left)
+  yield preorderTraverse(node.right)
 }
 
 let tree = {
@@ -100,7 +100,7 @@ let tree = {
   }
 }
 
-runGenerator(inorderTraverse(tree))
+runGenerator(preorderTraverse(tree))
 ```
 
 输出结果：

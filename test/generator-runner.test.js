@@ -26,14 +26,14 @@ function* fib(n) {
 /**
  * 二叉树前序遍历
  */
-function* inorderTraverse(node, result) {
+function* preorderTraverse(node, result) {
   if (!node) {
     return
   }
 
   result.push(node.val)
-  yield inorderTraverse(node.left, result)
-  yield inorderTraverse(node.right, result)
+  yield preorderTraverse(node.left, result)
+  yield preorderTraverse(node.right, result)
 }
 
 describe('run test', () => {
@@ -69,7 +69,7 @@ describe('run test', () => {
     }
 
     let result = []
-    runGenerator(inorderTraverse(tree, result))
+    runGenerator(preorderTraverse(tree, result))
     assert.deepEqual(result, [1, 2, 3, 4, 5, 6])
 
     
@@ -85,7 +85,7 @@ describe('run test', () => {
     }
 
     let result = []
-    runGenerator(inorderTraverse(tree, result))
+    runGenerator(preorderTraverse(tree, result))
     for (let i = 0; i < result.length; i++) {
       assert.equal(result[i], 1000000 - i)
     }
